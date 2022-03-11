@@ -2,5 +2,4 @@
 FROM mcr.microsoft.com/dotnet/sdk:5.0 
 WORKDIR /app
 COPY bin/Debug/net5.0/HelloWorld.dll .
-RUN /app/ ls -lart
 ENTRYPOINT ["dotnet","HelloWorld.dll"]
