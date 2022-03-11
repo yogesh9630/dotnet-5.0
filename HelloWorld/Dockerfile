@@ -3,7 +3,7 @@ WORKDIR /app
 COPY bin/Debug/net5.0/HelloWorld.dll HelloWorld1.dll
 RUN pwd
 RUN ls -lart
-#CMD ["dotnet","HelloWorld.dll"]
+CMD ["dotnet","HelloWorld1.dll"]
 ENTRYPOINT ["dotnet","/app/HelloWorld1.dll"]
 #RUN dotnet run HelloWorld.dll
 
