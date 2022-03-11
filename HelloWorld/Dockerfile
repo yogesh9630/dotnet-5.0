@@ -4,7 +4,7 @@
 #ENTRYPOINT ["dotnet","HelloWorld.dll"]
 #RUN dotnet run HelloWorld.dll
 
-FROM microsoft/dotnet:5.0-sdk AS build
+FROM microsoft/dotnet:2.2-sdk AS build
 WORKDIR /app
 
 COPY /opt/TeamCity/buildAgent/work/e7f3a86cfeec4371/HelloWorld/HelloWprld.csproj .
@@ -13,7 +13,7 @@ RUN dotnet restore HelloWorld.csproj
 COPY . .
 RUN dotnet publish -c Release -o out
 
-FROM microsoft/dotnet:5.0-aspnetcore-runtime AS runtime
+FROM microsoft/dotnet:2.2-aspnetcore-runtime AS runtime
 WORKDIR /app
 COPY --from=build /app/out ./
 
